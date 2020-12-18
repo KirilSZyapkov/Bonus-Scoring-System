@@ -1,0 +1,25 @@
+function bonusScoringSystem(input) {
+    let countStudents = Number(input.shift());
+    let countLectures = Number(input.shift());
+    let initialBonus = Number(input.shift());
+    let totalBonus = 0;
+    let maxBonus = 0;
+    let student = 0;
+    if(countLectures!==0){
+        for (let a = 0; a < countStudents; a++) {
+            let x = Number(input.shift());
+            totalBonus = Math.round(x / countLectures * (5 + initialBonus));
+            if (totalBonus > initialBonus) {
+                if (totalBonus > maxBonus) {
+                    maxBonus = totalBonus;
+                    student = x;
+                }
+            }
+        }
+        console.log(`Max Bonus: ${maxBonus}.`);
+        console.log(`The student has attended ${student} lectures.`);
+    } else {
+        console.log(`Max Bonus: ${maxBonus}.`);
+        console.log(`The student has attended ${student} lectures.`);
+    }
+}
